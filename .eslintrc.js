@@ -1,29 +1,14 @@
-module.exports = {
-    "env": {
-        "browser": true,
-        "es6": true,
-        "node": true
-    },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "sourceType": "module"
-    },
-    "rules": {
-        "indent": [
-            "error",
-            "tab"
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ]
-    }
-};
+{
+  "env": {
+    "browser": true,
+    "mocha": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+  ],
+  "rules": {
+    "func-names": ["error", "never"],
+    "max-len": ["error", 140, { "ignoreComments": true }]
+  }
+}
