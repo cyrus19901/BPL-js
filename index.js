@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 const crypto = require('./lib/transactions/crypto.js')
 const delegate = require('./lib/transactions/delegate.js')
@@ -11,6 +12,21 @@ const HDNode = require('./lib/hdnode.js')
 const ECSignature = require('./lib/ecsignature.js')
 const customAddress = require('./lib/customAddress.js')
 var libCrypto = require('./lib/crypto.js')
+=======
+const crypto = require('./lib/transactions/crypto.js');
+const delegate = require('./lib/transactions/delegate.js');
+const signature = require('./lib/transactions/signature.js');
+const transaction = require('./lib/transactions/transaction.js');
+const vote = require('./lib/transactions/vote.js');
+const ipfs = require('./lib/transactions/ipfs.js');
+const autoUpdate = require('./lib/transactions/autoUpdate.js');
+const slots = require('./lib/time/slots.js');
+const ECPair = require('./lib/ecpair.js');
+const HDNode = require('./lib/hdnode.js');
+const ECSignature = require('./lib/ecsignature.js');
+const customAddress = require('./lib/customAddress.js');
+const poll = require('./lib/transactions/poll.js');
+>>>>>>> dbe7ed550ee1cca4905a62ddb31fb4501190ab86
 //default config for BPL
 const defaultConfig = require('./config.json')
 
@@ -22,6 +38,7 @@ class BplClass {
 			epochTime: config.epochTime || defaultConfig.epochTime,
 			interval: config.interval || defaultConfig.interval,
 			network: config.network || defaultConfig.network
+<<<<<<< HEAD
 		}
 		/** @see module:crypto */
 		this.crypto = new crypto.CryptoClass(finalConfig)
@@ -47,6 +64,23 @@ class BplClass {
 		this.ECSignature = ECSignature
 		/** @see CustomAddress */
 		this.customAddress = customAddress
+=======
+		};
+
+		this.crypto = new crypto.CryptoClass(finalConfig);
+		this.delegate = new delegate.DelegateClass(finalConfig);
+		this.signature = new signature.SignatureClass(finalConfig);
+		this.transaction = new transaction.TransactionClass(finalConfig);
+		this.vote = new vote.VoteClass(finalConfig);
+		this.ipfs = new ipfs.IpfsClass(finalConfig);
+		this.slots = new slots.SlotsClass(finalConfig);
+		this.poll =  new poll.PollClass(finalConfig);
+		this.autoUpdate = new autoUpdate.AutoUpdateClass(finalConfig);
+		this.ECPair = ECPair;
+		this.HDNode = HDNode;
+		this.ECSignature = ECSignature;
+		this.customAddress = customAddress;
+>>>>>>> dbe7ed550ee1cca4905a62ddb31fb4501190ab86
 	}
 }
 /**
@@ -88,6 +122,8 @@ let bpljs = {
 	vote,
 	ipfs,
 	slots,
+	poll,
+	autoUpdate,
 	ECPair,
 	HDNode,
 	ECSignature,
