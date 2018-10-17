@@ -12,7 +12,7 @@
     "wif": 170,
     "client": {
       "token": "BLOCKPOOL",
-      "tokenShortName": "BPL",
+      "ticker": "BPL",
       "symbol": "β",
       "explorer": "http://13.56.163.57:9031"
     }
