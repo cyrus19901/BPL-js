@@ -1,10 +1,9 @@
-<<<<<<< HEAD
-
 const crypto = require('./lib/transactions/crypto.js')
 const delegate = require('./lib/transactions/delegate.js')
 const signature = require('./lib/transactions/signature.js')
 const transaction = require('./lib/transactions/transaction.js')
 const vote = require('./lib/transactions/vote.js')
+const autoUpdate = require('./lib/transactions/autoUpdate.js')
 const ipfs = require('./lib/transactions/ipfs.js')
 const slots = require('./lib/time/slots.js')
 const ECPair = require('./lib/ecpair.js')
@@ -12,24 +11,8 @@ const HDNode = require('./lib/hdnode.js')
 const ECSignature = require('./lib/ecsignature.js')
 const customAddress = require('./lib/customAddress.js')
 var libCrypto = require('./lib/crypto.js')
-=======
-const crypto = require('./lib/transactions/crypto.js');
-const delegate = require('./lib/transactions/delegate.js');
-const signature = require('./lib/transactions/signature.js');
-const transaction = require('./lib/transactions/transaction.js');
-const vote = require('./lib/transactions/vote.js');
-const ipfs = require('./lib/transactions/ipfs.js');
-const autoUpdate = require('./lib/transactions/autoUpdate.js');
-const slots = require('./lib/time/slots.js');
-const ECPair = require('./lib/ecpair.js');
-const HDNode = require('./lib/hdnode.js');
-const ECSignature = require('./lib/ecsignature.js');
-const customAddress = require('./lib/customAddress.js');
-const poll = require('./lib/transactions/poll.js');
->>>>>>> dbe7ed550ee1cca4905a62ddb31fb4501190ab86
-//default config for BPL
 const defaultConfig = require('./config.json')
-
+const poll = require('./lib/transactions/poll.js')
 class BplClass {
 	constructor(config) {
 		config = config || {}
@@ -38,33 +21,6 @@ class BplClass {
 			epochTime: config.epochTime || defaultConfig.epochTime,
 			interval: config.interval || defaultConfig.interval,
 			network: config.network || defaultConfig.network
-<<<<<<< HEAD
-		}
-		/** @see module:crypto */
-		this.crypto = new crypto.CryptoClass(finalConfig)
-		/** @see module:delegate */
-		this.delegate = new delegate.DelegateClass(finalConfig)
-		/** @see module:signature */
-		this.signature = new signature.SignatureClass(finalConfig)
-		/** @see module:multisignature */
-		this.signature = new multisignature.MultiSignatureClass(finalConfig)
-		/** @see module:transaction */
-		this.transaction = new transaction.TransactionClass(finalConfig)
-		/** @see module:vote */
-		this.vote = new vote.VoteClass(finalConfig)
-		/** @see module:ipfs */
-		this.ipfs = new ipfs.IpfsClass(finalConfig)
-		/** @see module:slots */
-		this.slots = new slots.SlotsClass(finalConfig)
-		/** @see ECPair */
-		this.ECPair = ECPair
-		/** @see HDNode */
-		this.HDNode = HDNode
-		/** @see ECSignature */
-		this.ECSignature = ECSignature
-		/** @see CustomAddress */
-		this.customAddress = customAddress
-=======
 		};
 
 		this.crypto = new crypto.CryptoClass(finalConfig);
@@ -80,7 +36,6 @@ class BplClass {
 		this.HDNode = HDNode;
 		this.ECSignature = ECSignature;
 		this.customAddress = customAddress;
->>>>>>> dbe7ed550ee1cca4905a62ddb31fb4501190ab86
 	}
 }
 /**
